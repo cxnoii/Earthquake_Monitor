@@ -1,7 +1,6 @@
-
 var map = L.map("map", {
-    center:[37.09, -95.71],
-    zoom:5 
+    center:[28.63, 2.78],
+    zoom:3
 });
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,6 +16,7 @@ function main() {
     d3.json(url).then(function (data) {
         console.log(data.features);
         drawCircles(data.features);
+        createLegend();
     })
 }
 
@@ -28,7 +28,7 @@ function drawCircles(eqData) {
 
     for (var i =0; i<eqData.length; i++) {
         var mag = eqData[i].properties.mag;
-        var circleRadius = mag**6.5;
+        var circleRadius = mag*(10**5);
         var lat = eqData[i].geometry.coordinates[1];
         var lng = eqData[i].geometry.coordinates[0];
         var depth = eqData[i].geometry.coordinates[2];
@@ -70,6 +70,7 @@ function colorIntensity(depth) {
      return color;
 }
 
+
 // //L.geoJSON objects must have a collection called 'coordinates': this is where coordinates to graph come from
 // function createFeatures(eqData) { 
 //     console.log('data passed into createFeatures', eqData);
@@ -102,10 +103,37 @@ function createMap(earthquakes) {
         "Satellite": googleSat,
       };
 
-
     L.control.layers(baseMaps, overlay, {
     collapsed: false
     }).addTo(map);
 }
+
+function createLegend() { 
+    var legendColors = ['lightgreen', 'greenyellow', 'yellow', 'orange', 'orangered', 'firebrick'];
+    var scale = -10
+    var legendRows = [];
+
+    for (let i = 0; i<legendColors.length; i++) {
+
+        let legendRow = {
+            label: scale,
+            type: "polygon",
+            sides:4,
+            fillColor: legendColors[i],
+             weight: 2
+        }
+        legendRows.push(legendRow)
+        scale += 20
+
+           }
+        
+        L.control.Legend({
+            position: "bottomleft",
+            title: "Depth (km)",
+            opacity: 0.9,
+            legends: legendRows
+        }).addTo(map);
+    }
+
 
 main();
