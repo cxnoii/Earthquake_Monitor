@@ -1,15 +1,17 @@
-// let url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
+
+var map = L.map("map", {
+    center:[37.09, -95.71],
+    zoom:5 
+});
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.control.mousePosition().addTo(map);
+
+
 let url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson"
-
-// var map = L.map("map", {
-//     center:[37.09, -95.71],
-//     zoom:5 
-// });
-
-// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
-
 
 function main() {
     d3.json(url).then(function (data) {
@@ -100,15 +102,6 @@ function createMap(earthquakes) {
         "Satellite": googleSat,
       };
 
-      var map = L.map("map", {
-        center:[37.09, -95.71],
-        zoom:5 
-    });
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    
 
     L.control.layers(baseMaps, overlay, {
     collapsed: false
