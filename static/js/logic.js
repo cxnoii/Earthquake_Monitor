@@ -28,12 +28,12 @@ function drawCircles(eqData) {
 
     for (var i =0; i<eqData.length; i++) {
         var mag = eqData[i].properties.mag;
-        var circleRadius = mag*(10**5);
+        var circleRadius = mag*10;
         var lat = eqData[i].geometry.coordinates[1];
         var lng = eqData[i].geometry.coordinates[0];
         var depth = eqData[i].geometry.coordinates[2];
 
-        var circle = L.circle([lat,lng], {
+        var circle = L.circleMarker([lat,lng], {
             radius:circleRadius,
             color: colorIntensity(depth),
             fillOpacity: 0.6,
@@ -94,13 +94,25 @@ function createMap(earthquakes) {
         subdomains:['mt0','mt1','mt2','mt3']
     });
 
+    var stadiaDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+	maxZoom: 20,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+    });
+    
+    var topograph = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    });
+
     var overlay = {
         Earthquakes: earthquakes
     }
 
     var baseMaps = {
-        "Street Map": street,
+        "Street": street,
+        "Street (Dark)": stadiaDark,
         "Satellite": googleSat,
+        "Topograhic": topograph
       };
 
     L.control.layers(baseMaps, overlay, {
