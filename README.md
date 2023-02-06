@@ -1,1 +1,1 @@
-# leaflet-challenge
+# Earthquake Monitor Application
