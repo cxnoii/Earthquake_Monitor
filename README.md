@@ -6,5 +6,5 @@ The goal of this project is to make API calls from the USGS endpoints to create 
 ## Resources
 * [USGS Earthquake Data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 * [4.5+ Earthquakes in the Past 7 Days GeoJSON](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson)
-* [Tectonic Plate Boundaries from user: fraxen](https://github.com/fraxen/tectonicplates
-* [Tectonic Plate Boundaries GeoJSON](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json
+* [Tectonic Plate Boundaries from user: fraxen](https://github.com/fraxen/tectonicplates)
+* [Tectonic Plate Boundaries GeoJSON](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json)
