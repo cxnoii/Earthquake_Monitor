@@ -1,5 +1,7 @@
 # Earthquake Monitor Application
 
+![eq_map](https://user-images.githubusercontent.com/114107454/224603182-510f94cb-c7c9-4f83-968b-8d3eeecf45c5.jpg)
+
 ## Overview
 The goal of this project is to make API calls from the USGS endpoints to create a map that will display earthquakes with a magnitude of 4.5 or higher within the past 7 days and describe their location, depth, and magnitude. Additionally, tectonic plate boundaries will be visualized as a leaflet layer that can be toggled on and off. The requests will be made using d3.json and the map visualization will be made using Leaflet.js. The tectonic plate boundaries will be displayed on the map by utilizing GeoJSON. Earthquake data is coming from the United States Geological Survey (USGS).
 
@@ -9,5 +11,3 @@ The goal of this project is to make API calls from the USGS endpoints to create 
 * [Tectonic Plate Boundaries from user: fraxen](https://github.com/fraxen/tectonicplates)
 * [Tectonic Plate Boundaries GeoJSON](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json)
 
-
-![eq_map](https://user-images.githubusercontent.com/114107454/224603182-510f94cb-c7c9-4f83-968b-8d3eeecf45c5.jpg)
