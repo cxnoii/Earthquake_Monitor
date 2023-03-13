@@ -10,4 +10,4 @@ The goal of this project is to make API calls from the USGS endpoints to create 
 * [Tectonic Plate Boundaries GeoJSON](https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json)
 
 
-![Uploading eq_map.jpg…]()
+![eq_map](https://user-images.githubusercontent.com/114107454/224603182-510f94cb-c7c9-4f83-968b-8d3eeecf45c5.jpg)
