@@ -15,7 +15,9 @@ The USGS API consists of many different parameters for each earthquake but the k
 * _title_: a description of where the earthquake occured
 
 The radius of the circles drawn on the map indicate it's relative _magnitude_, while the _depth_ of the earthquake corresponds to the color of the circles. Values closer to green occured closer to the surface, increasing in depth as we approach red.
-                     
+
+## Map Creation
+Javascript's leaflet.js library was used in conjunction with OpenStreetMap's tile layers to create this application. 
 
 ## Resources
 * [USGS Earthquake Data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
