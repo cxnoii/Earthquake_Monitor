@@ -21,6 +21,7 @@ Javascript's leaflet.js library was used in conjunction with OpenStreetMap's til
 
 *  _L.tileLayer_
   - tileLayers from OpenStreetMap were used to draw the global map.
+
 * _L.circleMarker_
   - The coordinates of the earthquakes were passed into this leaflet function to draw a circle around the epicenter of the earthquake. Circle size is directly related to the magnitude of the earthquake. The circles can be clicked to view the value of magnitude and depth.
 * _.bindpopup_
