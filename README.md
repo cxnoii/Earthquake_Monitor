@@ -5,6 +5,18 @@ The goal of this project is to make API calls from the USGS endpoints to create 
 
 ![eq_map](https://user-images.githubusercontent.com/114107454/224603182-510f94cb-c7c9-4f83-968b-8d3eeecf45c5.jpg)
 
+## Data
+The USGS API consists of many different parameters for each earthquake but the key metrics that will be used to make this application are as follows:
+* _coordinates_
+  - _0_: x-coordinate
+  - _1_: y-coordinate
+  - _2_: depth
+* _mag_: size of the earthquake
+* _title_: a description of where the earthquake occured
+
+The radius of the circles drawn on the map indicate it's relative _magnitude_, while the _depth_ of the earthquake corresponds to the color of the circles. Values closer to green occured closer to the surface, increasing in depth as we approach red.
+                     
+
 ## Resources
 * [USGS Earthquake Data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 * [4.5+ Earthquakes in the Past 7 Days GeoJSON](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson)
