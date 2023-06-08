@@ -16,8 +16,18 @@ The USGS API consists of many different parameters for each earthquake but the k
 
 The radius of the circles drawn on the map indicate it's relative _magnitude_, while the _depth_ of the earthquake corresponds to the color of the circles. Values closer to green occured closer to the surface, increasing in depth as we approach red.
 
-## Map Creation
-Javascript's leaflet.js library was used in conjunction with OpenStreetMap's tile layers to create this application. 
+## Leaflet Libraries
+Javascript's leaflet.js library was used in conjunction with OpenStreetMap's tile layers to create this application. After making requests to the USGS API, the parameters of interest are saved as variables where they will be passed into Leaflet's _circleMarker_ function to create a circle on the map with an earthquake's given coordinates. The following leaflet libraries are a sample of what was used in this project.
+
+*  _L.tileLayer_
+* _L.circleMarker_
+* _.bindpopup_
+* _L.geoJSON_
+* _L.control.layers_
+* _L.control.legend_
+
+
+
 
 ## Resources
 * [USGS Earthquake Data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
