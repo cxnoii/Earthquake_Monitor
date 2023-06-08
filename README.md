@@ -26,10 +26,11 @@ Javascript's leaflet.js library was used in conjunction with OpenStreetMap's til
 * _.bindpopup_
   - The values for magnitude and depth are displayed in a text box upon clicking through the use of this function.
 * _L.control.layers_
-  - a
+  - Enables user to switch the map style and toggle the earthquake markers as well as the tectonic plate boundaries
 * _L.control.legend_
-
-
+  - Draws a legend on the map indicating the earthquakes relative depth. 
+* L.geoJSON
+  - Used to draw the tectonic plate boundaries using geoJSON data provided by user: [fraxen](https://github.com/fraxen/tectonicplates)
 
 ## Resources
 * [USGS Earthquake Data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
